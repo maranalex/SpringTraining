@@ -2,18 +2,17 @@ package ro.msg.learning.shop.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
 @Data
+@Entity
+@Table(name = OrderDetailEntity.TABLE_NAME)
 public class OrderDetailEntity {
+    public static final String TABLE_NAME = "OrderDetail";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     //    private OrderEntity order;
-//    private ProductEntity product;
+    //    private ProductEntity product;
     private Integer quantity;
 }

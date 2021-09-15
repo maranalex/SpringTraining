@@ -2,15 +2,14 @@ package ro.msg.learning.shop.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
-@Entity
 @Data
+@Entity
+@Table(name = LocationEntity.TABLE_NAME)
 public class LocationEntity {
+    public static final String TABLE_NAME = "Location";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -18,5 +17,5 @@ public class LocationEntity {
     private String addressCountry;
     private String addressCity;
     private String addressCounty;
-//    private AddressInformationEntity addressInformation;
+    //    private AddressInformationEntity addressInformation;
 }

@@ -4,10 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "customer")
 @Data
+@Entity
+@Table(name = CustomerEntity.TABLE_NAME)
 public class CustomerEntity {
+    public static final String TABLE_NAME = "Customer";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;

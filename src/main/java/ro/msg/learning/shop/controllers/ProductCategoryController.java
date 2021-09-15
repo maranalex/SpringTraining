@@ -17,7 +17,8 @@ public class ProductCategoryController {
     private ProductCategoryRepository productCategoryRepository;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addNewSupplier(@RequestParam String supplierName, @RequestParam String supplierDescription){
+    public @ResponseBody
+    String addNewSupplier(@RequestParam String supplierName, @RequestParam String supplierDescription) {
         ProductCategoryEntity newSupplier = new ProductCategoryEntity();
         newSupplier.setName(supplierName);
         newSupplier.setDescription(supplierDescription);

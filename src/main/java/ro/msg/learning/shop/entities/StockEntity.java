@@ -2,18 +2,17 @@ package ro.msg.learning.shop.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
 @Data
+@Entity
+@Table(name = StockEntity.TABLE_NAME)
 public class StockEntity {
+    public static final String TABLE_NAME = "Stock";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     //    private ProductEntity product;
-//    private LocationEntity location;
+    //    private LocationEntity location;
     private Integer quantity;
 }
