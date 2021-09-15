@@ -2,9 +2,11 @@ package ro.msg.learning.shop.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Data
@@ -16,7 +18,7 @@ public class ProductEntity {
     private String description;
     private BigDecimal price;
     private Double weight;
-    private List<SupplierEntity> supplier;
+    //    private List<SupplierEntity> supplier;
     private String imageUrl;
-    private List<ProductCategoryEntity> categories;
+//    private List<ProductCategoryEntity> categories;
 }

@@ -2,12 +2,10 @@ package ro.msg.learning.shop.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "customer")
 @Data
 public class CustomerEntity {
     @Id
@@ -18,4 +16,6 @@ public class CustomerEntity {
     private String username;
     private String password;
     private String emailAddress;
+    @OneToOne(mappedBy = "customer")
+    private OrderEntity order;
 }

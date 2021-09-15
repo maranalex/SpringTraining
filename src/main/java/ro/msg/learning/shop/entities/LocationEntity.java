@@ -18,5 +18,5 @@ public class LocationEntity {
     private String addressCountry;
     private String addressCity;
     private String addressCounty;
-    private AddressInformationEntity addressInformation;
+//    private AddressInformationEntity addressInformation;
 }

@@ -13,7 +13,7 @@ public class OrderDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private OrderEntity order;
-    private ProductEntity product;
+    //    private OrderEntity order;
+//    private ProductEntity product;
     private Integer quantity;
 }

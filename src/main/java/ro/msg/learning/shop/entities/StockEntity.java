@@ -1,6 +1,7 @@
 package ro.msg.learning.shop.entities;
 
 import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +13,7 @@ public class StockEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private ProductEntity product;
-    private LocationEntity location;
+    //    private ProductEntity product;
+//    private LocationEntity location;
     private Integer quantity;
 }
