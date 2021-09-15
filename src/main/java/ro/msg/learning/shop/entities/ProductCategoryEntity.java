@@ -3,6 +3,7 @@ package ro.msg.learning.shop.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,5 +15,10 @@ public class ProductCategoryEntity {
     private Integer id;
     private String name;
     private String description;
-    //    private List<ProductEntity> products;
+    @ManyToMany
+    @JoinTable(
+            name = "products_and_categories",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<ProductEntity> products;
 }

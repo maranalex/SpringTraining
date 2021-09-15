@@ -3,6 +3,7 @@ package ro.msg.learning.shop.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -13,5 +14,7 @@ public class SupplierEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    //    private List<ProductEntity> products;
+
+    @OneToMany(mappedBy = "supplier")
+    private List<ProductEntity> products;
 }

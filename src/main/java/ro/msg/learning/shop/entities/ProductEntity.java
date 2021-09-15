@@ -21,7 +21,13 @@ public class ProductEntity {
 
     @ManyToMany(mappedBy = "products")
     private List<StockEntity> stocks;
-    //    private List<ProductCategoryEntity> categories;
-    //    private List<SupplierEntity> supplier;
+
+    @ManyToMany(mappedBy = "products")
+    private List<ProductCategoryEntity> categories;
+
+    @ManyToOne
+    @JoinColumn(name = "supplier_id", referencedColumnName = "id")
+    private SupplierEntity supplier;
+
     private String imageUrl;
 }
