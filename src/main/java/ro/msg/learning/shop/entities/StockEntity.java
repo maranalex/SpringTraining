@@ -13,6 +13,8 @@ public class StockEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     //    private ProductEntity product;
-    //    private LocationEntity location;
+    @OneToOne
+    @JoinColumn(name = "location_id", referencedColumnName = "id")
+    private LocationEntity location;
     private Integer quantity;
 }

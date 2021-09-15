@@ -15,4 +15,8 @@ public class AddressInformationEntity {
     private String country;
     private String city;
     private String county;
+    @OneToOne(mappedBy = "addressInformation")
+    private OrderEntity order;
+    @OneToOne(mappedBy = "addressInformation")
+    private LocationEntity location;
 }

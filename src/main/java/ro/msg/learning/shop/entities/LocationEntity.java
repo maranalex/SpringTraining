@@ -14,8 +14,11 @@ public class LocationEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    private String addressCountry;
-    private String addressCity;
-    private String addressCounty;
-    //    private AddressInformationEntity addressInformation;
+
+    @OneToOne
+    @JoinColumn(name = "address_information_id")
+    private AddressInformationEntity addressInformation;
+
+    @OneToOne(mappedBy = "location")
+    private StockEntity stock;
 }

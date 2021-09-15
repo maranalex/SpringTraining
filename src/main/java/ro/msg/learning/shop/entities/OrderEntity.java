@@ -14,7 +14,10 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     //    private LocationEntity shippedFrom;
-    //    private AddressInformationEntity addressInformation;
+    @OneToOne
+    @JoinColumn(name = "address_information_id", referencedColumnName = "id")
+    private AddressInformationEntity addressInformation;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private CustomerEntity customer;
