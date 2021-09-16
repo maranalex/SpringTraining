@@ -12,7 +12,14 @@ public class OrderDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    //    private OrderEntity order;
-    //    private ProductEntity product;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private OrderEntity order;
+
+    @OneToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    private ProductEntity product;
+
     private Integer quantity;
 }

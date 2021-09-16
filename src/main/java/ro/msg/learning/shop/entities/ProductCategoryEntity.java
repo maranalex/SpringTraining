@@ -15,6 +15,7 @@ public class ProductCategoryEntity {
     private Integer id;
     private String name;
     private String description;
+
     @ManyToMany
     @JoinTable(
             name = "products_and_categories",

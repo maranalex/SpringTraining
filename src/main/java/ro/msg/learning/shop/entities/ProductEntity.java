@@ -19,15 +19,18 @@ public class ProductEntity {
     private BigDecimal price;
     private Double weight;
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
     private List<StockEntity> stocks;
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
     private List<ProductCategoryEntity> categories;
 
     @ManyToOne
     @JoinColumn(name = "supplier_id", referencedColumnName = "id")
     private SupplierEntity supplier;
+
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    private OrderDetailEntity orderDetail;
 
     private String imageUrl;
 }

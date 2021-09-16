@@ -19,6 +19,9 @@ public class LocationEntity {
     @JoinColumn(name = "address_information_id")
     private AddressInformationEntity addressInformation;
 
-    @OneToOne(mappedBy = "location")
+    @OneToOne(mappedBy = "location", cascade = CascadeType.ALL)
     private StockEntity stock;
+
+    @OneToOne(mappedBy = "shippedFrom", cascade = CascadeType.ALL)
+    private OrderEntity order;
 }

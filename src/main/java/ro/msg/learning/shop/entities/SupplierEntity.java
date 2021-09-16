@@ -15,6 +15,6 @@ public class SupplierEntity {
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy = "supplier")
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
     private List<ProductEntity> products;
 }

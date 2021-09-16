@@ -17,6 +17,7 @@ public class CustomerEntity {
     private String username;
     private String password;
     private String emailAddress;
-    @OneToOne(mappedBy = "customer")
+
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     private OrderEntity order;
 }
