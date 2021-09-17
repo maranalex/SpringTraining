@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.entities;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Builder
 @Table(name = ProductEntity.TABLE_NAME)
 public class ProductEntity {
     public static final String TABLE_NAME = "Product";
@@ -19,8 +21,8 @@ public class ProductEntity {
     private BigDecimal price;
     private Double weight;
 
-    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
-    private List<StockEntity> stocks;
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    private StockEntity stock;
 
     @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL)
     private List<ProductCategoryEntity> categories;
